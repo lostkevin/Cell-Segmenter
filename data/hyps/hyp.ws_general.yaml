@@ -1,0 +1,49 @@
+# YOLOv5 🚀 by Ultralytics, GPL-3.0 license
+# Hyperparameters for low-augmentation COCO training from scratch
+# python train.py --batch 64 --cfg yolov5n6.yaml --weights '' --data coco.yaml --img 640 --epochs 300 --linear
+# See tutorials for hyperparameter evolution https://github.com/ultralytics/yolov5#tutorials
+
+lr0: 0.0005  # initial learning rate (SGD=1E-2, Adam=1E-3)
+lrf: 0.01  # final OneCycleLR learning rate (lr0 * lrf)
+momentum: 0.937  # SGD momentum/Adam beta1
+weight_decay: 0.0005  # optimizer weight decay 5e-4
+warmup_epochs: 0  # warmup epochs (fractions ok)
+warmup_momentum: 0.8  # warmup initial momentum
+warmup_bias_lr: 0.001  # warmup initial bias lr
+box: 0.05  # box loss gain
+seg: 0.01  # cls loss gain
+cls_pw: 1.0  # cls BCELoss positive_weight
+obj: 1.0  # obj loss gain (scale with pixels)
+obj_pw: 1.0  # obj BCELoss positive_weight
+anchor_t: 4.0  # anchor-multiple threshold
+gamma: 0.4
+degrees: 0.3  # image rotation (+/- deg)
+translate: 0.3  # image translation (+/- fraction)
+scale: 0.5  # image scale (+/- gain)
+shear: 0.05  # image shear (+/- deg)
+flipud: 0.5  # image flip up-down (probability)
+fliplr: 0.5  # image flip left-right (probability)
+brightness: 0.1
+contrast: 0.5
+saturation: 0.5
+hue: 0.25
+
+# omnipose hyp
+edt: 1
+binary: 1
+
+# dice& boundary
+dice: 0
+boundary: 0
+
+# weakly supervised
+pobj: 0.5
+pobj_pw: 3
+pedt: 0.5
+pbinary: 0.5
+
+oversample: False
+os_factor: 1
+
+auto_rescale: True
+colorjitter: True

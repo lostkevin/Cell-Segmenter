@@ -1,0 +1,31 @@
+# YOLOv5 🚀 by Ultralytics, GPL-3.0 license
+# Hyperparameters for low-augmentation COCO training from scratch
+# python train.py --batch 64 --cfg yolov5n6.yaml --weights '' --data coco.yaml --img 640 --epochs 300 --linear
+# See tutorials for hyperparameter evolution https://github.com/ultralytics/yolov5#tutorials
+
+lr0: 0.001  # initial learning rate (SGD=1E-2, Adam=1E-3)
+lrf: 0.01  # final OneCycleLR learning rate (lr0 * lrf)
+momentum: 0.937  # SGD momentum/Adam beta1
+weight_decay: 0.0005  # optimizer weight decay 5e-4
+warmup_epochs: 3.0  # warmup epochs (fractions ok)
+warmup_momentum: 0.8  # warmup initial momentum
+warmup_bias_lr: 0.01  # warmup initial bias lr
+seg: 1 
+
+gamma: 0.5
+degrees: 0.4  # image rotation (+/- deg)
+translate: 0.3  # image translation (+/- fraction)
+scale: 0.5  # image scale (+/- gain)
+shear: 0.05  # image shear (+/- deg)
+flipud: 0.5  # image flip up-down (probability)
+fliplr: 0.5  # image flip left-right (probability)
+
+# omnipose hyp
+mseflows: 10
+arccos: 1
+donb: 1
+msenorm: 2
+divergence: 2
+boundary: 1
+mseedt: 2
+donedt: 2

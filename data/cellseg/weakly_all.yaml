@@ -1,0 +1,12 @@
+# Train/val/test sets as 1) dir: path/to/imgs, 2) file: path/to/imgs.txt, or 3) list: [path/to/imgs1, path/to/imgs2, ..]
+path: ../../CellSeg_data/NeurIPS_CellSegData  # dataset root dir
+train: [Train_Labeled, Train_Unlabeled]  # train images (relative to 'path') 128 images
+val: Train_Labeled/images  # val images (relative to 'path') 128 images
+test:  # test images (optional)
+
+# Classes
+nc: 1  # number of classes
+names: ['cell']  # class names
+
+# Download script/URL (optional)
+# CUDA_VISIBLE_DEVICES=1,2,3 python train_new2.py --img 640 --batch 48 --epochs 5 --data data/cellseg/weakly_all.yaml  --workers 15  --cos-lr --name allLabeledWeakly --noautoanchor --project ~/cellseg_log3 --save-period 1  --weights /temp_disk/hkw/cellseg_log3/allLabeledData4/weights/best.pt --patience 0 --hyp data/hyps/hyp.ws.yaml

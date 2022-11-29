@@ -1,0 +1,52 @@
+# This config file is used for coarse baseline finetuning.
+# We add small colorjitter and strong rescale for better generalizability
+
+
+lr0: 0.001  # initial learning rate (SGD=1E-2, Adam=1E-3)
+lrf: 0.01  # final OneCycleLR learning rate (lr0 * lrf)
+momentum: 0.937  # SGD momentum/Adam beta1
+weight_decay: 0.0005  # optimizer weight decay 5e-4
+warmup_epochs: 1.0  # warmup epochs (fractions ok)
+warmup_momentum: 0.8  # warmup initial momentum
+warmup_bias_lr: 0.001  # warmup initial bias lr
+box: 0.05  # box loss gain
+seg: 0.01  # cls loss gain
+cls_pw: 1.0  # cls BCELoss positive_weight
+obj: 1.0  # obj loss gain (scale with pixels)
+obj_pw: 1.0  # obj BCELoss positive_weight
+anchor_t: 4.0  # anchor-multiple threshold
+gamma: 0.4
+degrees: 0.3  # image rotation (+/- deg)
+translate: 0.3  # image translation (+/- fraction)
+scale: 0.5  # image scale (+/- gain)
+shear: 0.05  # image shear (+/- deg)
+flipud: 0.5  # image flip up-down (probability)
+fliplr: 0.5  # image flip left-right (probability)
+brightness: 0.1
+contrast: 0.5
+saturation: 0.5
+hue: 0.05
+
+# dice& boundary
+dice: 0
+boundary: 0
+
+# omnipose hyp
+edt: 1
+binary: 1
+
+# weakly supervised
+pobj: 0.5
+pobj_pw: 1
+pedt: 0.5
+pbinary: 1
+
+auto_rescale: True
+colorjitter: True
+
+
+oversample: False
+os_factor: 1
+
+# gpu acceleration
+workers_gpu: []
